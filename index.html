@@ -5,7 +5,317 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Store</title>
-    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/20ba28b455.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anek+Devanagari:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script type="module" src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <div id="headerTop">
+        <div id="theUser">
+          <p><i class="fa-solid fa-user"></i></p>
+          <p id="userOptions">
+            <p id="noLoginP"><a id="userSignIn">Sign In</a> / <a id="userSignUp">Sign Up</a></p>
+            <p id="loginP">Hello, <span id="theUserName"></span><a id="userSignOut">(Sign Out)</a></p>
+          </p>
+        </div>
+        <div id="adminLinkDiv"></div>
+        <div id="contactIcons"><ul id="contactList"></ul></div>
+      </div>
+      <div id="headerBottom">
+        <div id="logoDiv"><img id="logo" src="/Imgs/My-Store-Logo2.png" /></div>
+        <div id="mainMenuDiv">
+          <a id="mobileBurger"><i class="fa-solid fa-bars"></i></a>
+          <nav><ul id="mainMenu"></ul></nav>
+        </div>
+        <div id="theCart">
+          <a id="myCart"><span id="cartProductsNum">0</span><i class="fa-solid fa-cart-plus"></i></a>
+          <div id="cartDiv">
+            <h3>Your Cart</h3>
+            <div id="cartProducts"></div>
+            <div id="cartTotal"><span id="cartTotalSumTitle">Total: </span><span id="cartTotalSum"><span id="cartTotalSumNum">0</span>$</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section id="main">
+      <div id="outerSignFrame">
+        <div id="innerSignFrame">
+          <a id="closeSignFrameBTN"><i class="fa-solid fa-xmark"></i></a>
+          <div id="signInForm">
+            <h3>Sign In</h3>
+            <p>
+              <label for="signInEmail">Email*</label
+              ><input
+                name="signInEmail"
+                id="signInEmail"
+                type="email"
+                placeholder="Your Email.."
+              />
+            </p>
+            <p>
+              <label for="signInPass">Password*</label
+              ><input
+                name="signInPass"
+                id="signInPass"
+                type="password"
+                placeholder="Your Password.."
+              />
+            </p>
+            <p>
+              <input
+                class="signSubmit"
+                name="signInSubmit"
+                id="signInSubmit"
+                type="submit"
+                value="Sign In"
+              />
+            </p>
+            <p class="signUpInChangeP">
+              Doesn't have an account yet?
+              <a class="signUpInChange" id="signUpChange">Sign Up!</a>
+            </p>
+            <p id="signInMessages"></p>
+          </div>
+          <div id="signUpForm">
+            <h3>Sign Up</h3>
+            <p>
+              <label for="signUpName">Full Name*</label
+              ><input
+                name="signUpName"
+                id="signUpName"
+                type="text"
+                placeholder="Your Name.."
+              />
+            </p>
+            <p>
+              <label for="signUpEmail">Email*</label
+              ><input
+                name="signUpEmail"
+                id="signUpEmail"
+                type="email"
+                placeholder="Your Email.."
+              />
+            </p>
+            <p>
+              <label for="signUpPass">Password*</label
+              ><input
+                name="signUpPass"
+                id="signUpPass"
+                type="password"
+                placeholder="Your Password"
+              />
+            </p>
+            <p>
+              <label for="signUpLevel">User Level*</label>
+              <select
+                name="signUpLevel"
+                id="signUpLevel"
+                placeholder="SignUpLevel"
+              >
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+              </select>
+            </p>
+            <p>
+              <input
+                class="signSubmit"
+                name="signUpSubmit"
+                id="signUpSubmit"
+                type="submit"
+                value="Sign Up"
+              />
+            </p>
+            <p class="signUpInChangeP">
+              Already have an account?
+              <a class="signUpInChange" id="signInChange">Sign In!</a>
+            </p>
+            <p id="signUpMessages"></p>
+          </div>
+        </div>
+      </div>
+      <div id="outerProductFrame">
+        <div id="innerProductFrame">
+          <a id="closeProductFrameBTN"><i class="fa-solid fa-xmark"></i></a>
+          <div id="ProductFormDiv">
+            <h3 id="productFormHeader">Edit Product</h3>
+            <p>
+              <label for="productSNInput">Product Serial Number*</label
+              ><input
+                name="productSNInput"
+                id="productSNInput"
+                type="number"
+                min="0"
+                placeholder="Product Serial Number"
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="productNameInput">Product Name*</label>
+              <input
+                name="productNameInput"
+                id="productNameInput"
+                type="text"
+                placeholder="Product Name.."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="productDescInput">Product Description*</label>
+              <input
+                name="productDescInput"
+                id="productDescInput"
+                type="text"
+                placeholder="Product Description.."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="productImgInput">Product Img (URL)*</label>
+              <input
+                name="productImgInput"
+                id="productImgInput"
+                type="url"
+                placeholder="Product Img (URL).."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="productPriceInput">Product Price*</label>
+              <input
+                name="productPriceInput"
+                id="productPriceInput"
+                type="number"
+                placeholder="Product Price.."
+                min="0"
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="productUnitInput">Sold By*</label>
+              <select
+                name="productUnitInput"
+                id="productUnitInput"
+                placeholder="Sold By.."
+              >
+                <option value="KG">KG</option>
+                <option value="Units">Units</option>
+              </select>
+            </p>
+            <p>
+              <label for="productCategoryInput">Category*</label>
+              <select
+                name="productCategoryInput"
+                id="productCategoryInput"
+                class="productInput"
+              >
+              </select>
+            </p>
+            <p id="editProductBtnP">
+            </p>
+            <p id="deleteProductBtnP">
+            </p>
+          </div>
+          <p id="productFormMessages"></p>
+        </div>
+      </div>
+      <div id="outerNewProductFrame">
+        <div id="innerNewProductFrame">
+          <a id="closeNewProductFrameBTN"><i class="fa-solid fa-xmark"></i></a>
+          <div id="newProductFormDiv">
+            <h3 id="newProductFormHeader">Add New Product</h3>
+            <p>
+              <label for="newProductSNInput">Product Serial Number*</label
+              ><input
+                name="newProductSNInput"
+                id="newProductSNInput"
+                type="number"
+                min="0"
+                placeholder="Product Serial Number"
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="newProductNameInput">Product Name*</label>
+              <input
+                name="newProductNameInput"
+                id="newProductNameInput"
+                type="text"
+                placeholder="Product Name.."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="newProductDescInput">Product Description*</label>
+              <input
+                name="newProductDescInput"
+                id="newProductDescInput"
+                type="text"
+                placeholder="Product Description.."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="newProductImgInput">Product Img (URL)*</label>
+              <input
+                name="newProductImgInput"
+                id="newProductImgInput"
+                type="url"
+                placeholder="Product Img (URL).."
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="newProductPriceInput">Product Price*</label>
+              <input
+                name="newProductPriceInput"
+                id="newProductPriceInput"
+                type="number"
+                placeholder="Product Price.."
+                min="0"
+                class="productInput"
+              />
+            </p>
+            <p>
+              <label for="newProductUnitInput">Sold By*</label>
+              <select
+                name="newProductUnitInput"
+                id="newProductUnitInput"
+                placeholder="Sold By.."
+              >
+                <option value="KG">KG</option>
+                <option value="Units">Units</option>
+              </select>
+            </p>
+            <p>
+              <label for="newProductCategoryInput">Category*</label>
+              <select
+                name="newProductCategoryInput"
+                id="newProductCategoryInput"
+                class="productInput"
+              >
+              </select>
+            </p>
+            <p id="createNewProductBtnP">
+            </p>
+          </div>
+          <p id="newProductFormMessages"></p>
+        </div>
+      </div>
+      <div id="products"></div>
+    </section>
+    <footer>
+      <p>All Right Reserved to My Store LTD.</p>
+      <p>Designed and Built by Ben Cohen.</p>
+    </footer>
+  </body>
 </html>
