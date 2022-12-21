@@ -201,7 +201,7 @@ header {
 #cartDiv {
   position: fixed;
   top: 218px;
-  left: 0px;
+  right: 0px;
   background-color: #ffffffef;
   z-index: 999;
   padding: 20px;
@@ -494,6 +494,41 @@ footer {
   text-align: center;
 }
 
+/*Alert Box*/
+/* The alert message box */
+#myAlert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+  position: fixed;
+  z-index: 9999;
+  top: 28px;
+  left: 45vw;
+  border-radius: 20px;
+}
+
+/* The close button */
+#closeBTN {
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  border: 1px solid black;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 7px 8px 0 8px;
+  border-radius: 50%;
+}
+
+#closeBTN:hover {
+  box-shadow: 0 0 10px 0 #00000080;
+}
+
 /*Mobile*/
 /*------*/
 @media (max-width: 767px) {
@@ -604,5 +639,11 @@ footer {
   }
   #products .productDiv .productAmount {
     margin: 10px 0 20px;
+  }
+  #myAlert {
+    top: 40vh;
+    left: 6%;
+    width: 88%;
+    text-align: center;
   }
 }

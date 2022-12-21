@@ -240,12 +240,19 @@ export class Store {
         addProduct.setAttribute("id", `addProduct${theProduct.sn}`);
         addProduct.setAttribute("class", "addProduct");
         addProduct.setAttribute("value", "Add to Cart");
-        addProduct.addEventListener("click", (e) =>
-          this.#currentUser.myCart.addToCart(
-            theProduct,
-            document.getElementById(`productAmountInput${theProduct.sn}`).value
-          )
-        );
+        addProduct.addEventListener("click", (e) => {
+          if (this.#currentUser) {
+            this.#currentUser.myCart.addToCart(
+              theProduct,
+              document.getElementById(`productAmountInput${theProduct.sn}`)
+                .value
+            );
+          } else {
+            document.getElementById("alertText").innerText =
+              "Please Sign Up/In to Start Buying.";
+            document.getElementById("myAlert").style.display = "block";
+          }
+        });
 
         addProductP.appendChild(addProduct);
 
